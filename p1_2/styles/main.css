@@ -2,29 +2,29 @@ body {
 	width: 90%;
 	max-width: 900px;
 	margin: 2em auto;
-	font: .9em/1.2 Arial, Helvetica, sans-serif;
 }
 
-.menu-object > body{
-	border-radius: 5px;
+.container > div {
+	border-radius: 10px;
 	padding: 10px;
-	background-color: rgb(207,232,220);
-	border: 2px solid rgb(79,185,227);
 }
 
-.menu-object{
+.container {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(0, .3fr);
 	grid-auto-rows: 100px;
 	gap: 20px;
 
-	display:block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 300px;
-	height: 75px;
-	font-size: 16px;
-	margin-top: 10px;
+}
+
+.menu-object{
+	width: 275px;
+	height: 100px;
+	
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #title{
@@ -38,13 +38,13 @@ p{
 
 button.menu-object:active{
 	font-size: 18px;
-	width: 275px;
-	height: 70px;
+	width: 300px;
+	height: 100px;
 }
 
 button.menu-object:hover:not(:active){
-	font-size: 22px;
-	width: 325px;
-	height: 85px;
+	font-size: 20px;
+	width: 300px;
+	height: 100px;
 }
 
