@@ -1,6 +1,17 @@
+body{
+    min-height: 100vh;
+    background: linear-gradient(#2b1055, #7597de);
+}
+
 #title{
+    margin-top: 35px;
 	font-size: 26px;
 	line-height: 75px;
+    color: white;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-family: Arial Black;
+    
 }
 
 .game-layout{
@@ -13,7 +24,7 @@
 
     width: 80%;
     margin: 0 auto;
-    background-color: lightgreen;
+    /*background-color: lightgreen;*/
     padding: 20px;
 }
 
@@ -25,16 +36,26 @@
 
     width: 80%;
     margin: 0 auto;
-    background-color: lightgreen;
+    /*background-color: lightgreen;*/
     padding: 20px;
 }
 
 .menu-object{
+    color: #aabadd;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.5em;
+    border-radius: 20px;
+
     margin-left: auto;
     margin-right: auto;
 	width: 300px;
 	height: 75px;
     margin-top: 10px;
+
+    border-width: 5px;
+    border-color: #7597de;
+    transition-duration: 0.3s;
 }
 
 p{
@@ -45,12 +66,16 @@ button.menu-object:active{
 	font-size: 18px;
 	width: 275px;
 	height: 75px;
+    color: lightcoral;
 }
 
 button.menu-object:hover:not(:active){
 	font-size: 22px;
 	width: 325px;
 	height: 75px;
+
+    background-color: white;
+    color:#7597de;
 }
 
 /*Links*/
