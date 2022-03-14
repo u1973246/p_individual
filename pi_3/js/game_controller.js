@@ -35,6 +35,10 @@ var game = new Vue({
 	},
 	methods: {
 		mostrarInici: function(i){
+			for(var j=0; j<this.current_card.length; j++){
+				Vue.set(this.current_card, i, {done: false, texture: back});
+			}
+
 			var segons = 5000;
 			if(i=="easy") segons = 5000;
 			else if(i=="medium") segons = 3000;
@@ -42,7 +46,10 @@ var game = new Vue({
 			else console.log("Error en determinar la dificultat de les cartes");
 
 			const myTimeout = setTimeout(myGreeting, segons); //Esperem duran x segons
-			Vue.set(this.current_card, i, {done: false, texture: this.items[i]});
+
+			for(var j=0; j<this.current_card.length; j++){
+				Vue.set(this.current_card, i, {done: false, texture: this.items[i]});
+			}
 		},
 		clickCard: function(i){
 			if (!this.current_card[i].done && this.current_card[i].texture === back)
