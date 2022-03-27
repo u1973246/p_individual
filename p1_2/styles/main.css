@@ -80,13 +80,15 @@ button.menu-object:hover:not(:active){
 
 /*Links*/
 a{
+    border-width: 5px;
     grid-column: 2/4;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
     text-decoration: none;
     padding: 10px 20px;
-    background-color: lightblue;
+    background-color: #aabadd;
+    border-color: #7597de;
     border-radius: 10px;
 }
 
