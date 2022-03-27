@@ -15,6 +15,7 @@ var game = new Vue({
 	el: "#game_id",
 	data: {
 		inicial: true,
+		puntuacio: 20,
 		username:'',
 		current_card: [],
 		items: [],
@@ -41,8 +42,8 @@ var game = new Vue({
 				Vue.set(this.current_card, i, {done: false, texture: this.items[i]});
 			}
 			var sec = 5000;
-			if(dificultat == 'normal') {sec = 3000; this.bad_clicks = 1}
-			else if(dificultat == 'hard') { sec = 1000; this.bad_clicks = 2}
+			if(dificultat == 'normal') {sec = 3000; this.puntuacio = 25}
+			else if(dificultat == 'hard') { sec = 1000; this.puntuacio = 50}
 			setTimeout(this.desmostrarInicial, sec);
 		},
 		desmostrarInicial: function(){
@@ -85,7 +86,7 @@ var game = new Vue({
 	},
 	computed: {
 		score_text: function(){
-			return 100 - this.bad_clicks * 20;
+			return 100 - this.bad_clicks * this.puntuacio;
 		}
 	}
 });
