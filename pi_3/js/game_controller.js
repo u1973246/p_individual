@@ -41,8 +41,8 @@ var game = new Vue({
 				Vue.set(this.current_card, i, {done: false, texture: this.items[i]});
 			}
 			var sec = 5000;
-			if(dificultat == 'normal') sec = 3000;
-			else if(dificultat == 'hard') sec = 1000;
+			if(dificultat == 'normal') {sec = 3000; this.bad = 1}
+			else if(dificultat == 'hard') { sec = 1000; this.bad = 2}
 			setTimeout(this.desmostrarInicial, sec);
 		},
 		desmostrarInicial: function(){
