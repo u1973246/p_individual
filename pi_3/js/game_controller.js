@@ -14,6 +14,7 @@ else{
 var game = new Vue({
 	el: "#game_id",
 	data: {
+		inicial: true,
 		username:'',
 		current_card: [],
 		items: [],
@@ -30,26 +31,25 @@ var game = new Vue({
 		this.items.sort(function(){return Math.random() - 0.5}); // Array aleatòria
 		for (var i = 0; i < this.items.length; i++){
 			this.current_card.push({done: false, texture: back});
-		}
-		mostrarInici(options_data.dificulty);
+		}		
+		this.mostrarInicial();
 	},
 	methods: {
-		mostrarInici: function(i){
-			for(var j=0; j<this.current_card.length; j++){
-				Vue.set(this.current_card, i, {done: false, texture: back});
-			}
-
-			var segons = 5000;
-			if(i=="easy") segons = 5000;
-			else if(i=="medium") segons = 3000;
-			else if(i=="hard") segons = 1000;
-			else console.log("Error en determinar la dificultat de les cartes");
-
-			const myTimeout = setTimeout(myGreeting, segons); //Esperem duran x segons
-
-			for(var j=0; j<this.current_card.length; j++){
+		mostrarInicial: function(){
+			var dificultat = options_data.dificulty;
+			for (var i = 0; i < this.current_card.length; i++){
 				Vue.set(this.current_card, i, {done: false, texture: this.items[i]});
 			}
+			var sec = 5000;
+			if(dificultat == 'normal') sec = 3000;
+			else if(dificultat == 'hard') sec = 1000;
+			setTimeout(this.desmostrarInicial, sec);
+		},
+		desmostrarInicial: function(){
+			for (var i = 0; i < this.current_card.length; i++){
+				Vue.set(this.current_card, i, {done: false, texture: back});
+			}
+			this.inicial = false;
 		},
 		clickCard: function(i){
 			if (!this.current_card[i].done && this.current_card[i].texture === back)
@@ -58,7 +58,7 @@ var game = new Vue({
 	},
 	watch: {
 		current_card: function(value){
-			if (value.texture === back) return;
+			if (value.texture === back || this.inicial) return;
 			var front = null;
 			var i_front = -1;
 			for (var i = 0; i < this.current_card.length; i++){
@@ -80,7 +80,7 @@ var game = new Vue({
 						i_front = i;
 					}
 				}
-			}			
+			}	
 		}
 	},
 	computed: {

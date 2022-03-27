@@ -1,24 +1,61 @@
-input[type=number]{
-	height: 3rem;
-    font-size: 1.3rem;
-    font-weight: bold;
-    width: 3rem;
-    text-align: center;
+body{
+    min-height: 100vh;
+    background: linear-gradient(#2b1055, #7597de);
 }
 
 #title{
+    margin-top: 35px;
 	font-size: 26px;
 	line-height: 75px;
+    color: white;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-family: Arial Black;
+    
+}
+
+.game-layout{
+    display: grid;
+    /*Una columna que ocupa auto, es pot indicar amb %*/
+    grid-template-columns: auto auto; 
+    grid-template-rows: auto auto;
+    gap: 10px;
+    justify-content: center;
+
+    width: 80%;
+    margin: 100px auto;
+    /*background-color: lightgreen;*/
+    padding: 20px;
+}
+
+.grid-layout{
+    display: grid;
+    /*Una columna que ocupa auto, es pot indicar amb %*/
+    grid-template-columns: auto;
+    justify-content: center;
+
+    width: 80%;
+    margin: 0 auto;
+    /*background-color: lightgreen;*/
+    padding: 20px;
 }
 
 .menu-object{
-	display:block;
-	margin-left: auto;
-	margin-right: auto;
+    color: #aabadd;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.5em;
+    border-radius: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
 	width: 300px;
 	height: 75px;
-	font-size: 16px;
-	margin-top: 10px;
+    margin-top: 10px;
+
+    border-width: 5px;
+    border-color: #7597de;
+    transition-duration: 0.3s;
 }
 
 p{
@@ -28,12 +65,31 @@ p{
 button.menu-object:active{
 	font-size: 18px;
 	width: 275px;
-	height: 70px;
+	height: 75px;
+    color: lightcoral;
 }
 
 button.menu-object:hover:not(:active){
 	font-size: 22px;
 	width: 325px;
-	height: 85px;
+	height: 75px;
+
+    background-color: white;
+    color:#7597de;
 }
 
+/*Links*/
+a{
+    grid-column: 1/2;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+a:hover{
+    color: lightcoral;
+}
